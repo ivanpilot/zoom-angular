@@ -2,6 +2,7 @@
 
 .spread {
   padding: 200px 0px 5px;
+  position: relative;
   
   [class*="lg-inc"]{
     text-align: center;
@@ -22,7 +23,7 @@
   border: 1px dashed peru;
   height: 6rem;
   position: absolute;
-  max-width: $chart-max-width;
+  max-width: 100%;
   min-width: 100%;
 }
 
