@@ -1,0 +1,45 @@
+/* === STATIC === DEMO SPECIFIC TBD LATER*/
+$min: -25;
+$max: 25;
+
+
+/* WRAPPER */
+$wrapper-margin: 2rem auto 0;
+$wrapper-max-width: 40rem;
+$wrapper-height: 60rem;
+$wrapper-padding: 2rem;
+
+/* CONTAINER */
+// $container-height: 20rem;
+
+/* COLOR */
+$bg-default-color: #ccc;
+$border-default-color: #ccc;
+
+$font-primary-color: #ccc;
+
+$spread-ladder-border-color: #ccc;
+
+/* GRID */
+$max-grid-width: 114rem;
+
+$gutter-vertical: 0rem;
+
+$gutter-hor-lg: 8rem;
+$gutter-hor-med: 6rem;
+$gutter-hor-sm: 3rem;
+$gutter-hor-xs: 2rem;
+$gutter-hor-xxs: 1rem;
+$gutter-hor-none: 0rem;
+
+/* CHART AREA */
+$chart-max-width: calc(#{$max-grid-width} - 2 * #{$wrapper-padding});
+$num-primary-col: 12;
+$num-mid-col: 2;
+$num-secondary-col-inside-primary-col: 5;
+$num-secondary-col: calc(#{$num-secondary-col-inside-primary-col} * (#{$num-primary-col} - #{$num-mid-col}));
+
+$width-primary-col: calc((100% - 2 * #{$wrapper-padding}) / #{$num-primary-col});
+$width-mid-col: calc(#{$num-mid-col} * #{$width-primary-col});
+
+$num-px-per-unit: calc((100% - 2 * #{$wrapper-padding} - $width-mid-col) / #{$num-secondary-col});

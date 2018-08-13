@@ -1,0 +1,9 @@
+@import '../styles.scss';
+
+.wrapper {
+  max-width: $wrapper-max-width;
+  height: $wrapper-height;
+  margin: $wrapper-margin;
+  padding: $wrapper-padding;
+  border: 1px solid darken(#ccc, 15%);
+}
