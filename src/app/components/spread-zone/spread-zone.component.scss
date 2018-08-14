@@ -1,4 +1,6 @@
-@import '../../../styles';
+@import 'styles';
+// import style from '../../../styles';
+// require<'../../../styles'>;
 
 .spread {
   padding: 200px 0px 5px;
@@ -24,7 +26,7 @@
   max-width: 100%;
   min-width: 100%;
   height: $chart-height;
-  border: 1px dashed peru;
+  // border: 1px dashed peru;
   font-size: .9rem;
 
   &__datapoints {
@@ -34,7 +36,7 @@
 
     &--tw-min {
       position: absolute;
-      color: purple;
+      color: get('purple');
       left: 1rem;
     }
 

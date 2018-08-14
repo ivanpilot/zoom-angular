@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {purple } from '../../../theme';
 
 @Component({
   selector: 'spread-zone',
@@ -10,6 +11,7 @@ export class SpreadZoneComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('theme is: ', purple)
   }
 
 }
