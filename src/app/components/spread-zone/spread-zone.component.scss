@@ -1,4 +1,6 @@
-@import '../../../styles';
+@import 'styles';
+// import style from '../../../styles';
+// require<'../../../styles'>;
 
 .spread {
   padding: 200px 0px 5px;
@@ -11,7 +13,7 @@
   }
 
   &__above-axis {
-    height: 6rem;
+    height: $chart-height;
   }
 
   &__lg-inc--first {
@@ -19,12 +21,62 @@
   }
 }
 
-.chart-area {
-  border: 1px dashed peru;
-  height: 6rem;
+.chart {
   position: absolute;
   max-width: 100%;
   min-width: 100%;
+  height: $chart-height;
+  // border: 1px dashed peru;
+  font-size: .9rem;
+
+  &__datapoints {
+    position: relative;
+    text-align: center;
+    line-height: 1rem;
+
+    &--tw-min {
+      position: absolute;
+      color: get('purple');
+      left: 1rem;
+    }
+
+    &--tw-max {
+      position: absolute;
+      color: green;
+      left: 6rem;
+    }
+
+    &--tw-mid {
+      position: absolute;
+      color: orangered;
+      left: 3rem;
+      z-index: 5;
+    }
+
+
+
+  }
+
+
+  .line{
+    // float: left;
+    position: relative;
+
+    &--purple {
+      color: purple;
+      position: absolute;
+      left: 1rem;
+
+    }
+
+    &--green {
+      color: green;
+      position: absolute;
+      z-index: 2;
+      left: 0.5rem;
+    }
+  }
+
 }
 
 

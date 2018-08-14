@@ -15,7 +15,7 @@
       },
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "angular-cli-builders:custom-webpack-browser",
           "options": {
             "outputPath": "dist/angular-zoom",
             "index": "src/index.html",
