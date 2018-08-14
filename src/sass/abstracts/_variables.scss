@@ -33,6 +33,7 @@ $gutter-hor-xxs: 1rem;
 $gutter-hor-none: 0rem;
 
 /* CHART AREA */
+$chart-height: 8rem;
 $chart-max-width: calc(#{$max-grid-width} - 2 * #{$wrapper-padding});
 $num-primary-col: 12;
 $num-mid-col: 2;
