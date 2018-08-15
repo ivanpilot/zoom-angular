@@ -1,4 +1,6 @@
-// console.log('inside webpack')
+const path = require('path');
+
+
 const sassVars = require(__dirname + "/src/theme.js");
 
 const convertStringToSassDimension = function(result) {
@@ -17,24 +19,27 @@ const convertStringToSassDimension = function(result) {
 };
 
 module.exports = {
-  // // entry: ["./sty.js" , "./app.js"],
-  // // output: {
-  // //   filename: "ibundle.js"
-  // // },
+  entry: {styles: "./src/styles.scss"},
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: "[name].js"
+  },
   // devtool: "source-map",
   module: {
-    rules: [
-      {
-        test: /\.scss$/,
-        use: [{
-          loader: "style-loader"
+    rules: [{
+      test: /\.scss$/,
+      use: [{
+        loader: "style-loader"
       }, {
-          loader: "css-loader"
+        loader: "css-loader"
       }, {
-          loader: "sass-loader",
-          options: {
+        loader: "sass-loader",
+        options: {
+          functions:{
             "get($keys)": function(keys) {
               keys = keys.getValue().split(".");
+              console.log(keys)
+              debugger
               let result = sassVars;
               let i;
               for (i = 0; i < keys.length; i++) {
@@ -52,8 +57,8 @@ module.exports = {
               return result;
             }
           }
+        }
       }]
-      }
-    ]
+    }]
   }
 };

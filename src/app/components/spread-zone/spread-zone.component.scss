@@ -1,6 +1,6 @@
-@import 'styles';
-// import style from '../../../styles';
-// require<'../../../styles'>;
+@import '../../../styles';
+// @import '../../../theme';
+// @import 'styles';
 
 .spread {
   padding: 200px 0px 5px;
@@ -37,6 +37,7 @@
     &--tw-min {
       position: absolute;
       color: get('purple');
+      // color: purple;
       left: 1rem;
     }
 

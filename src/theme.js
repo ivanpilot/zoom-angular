@@ -20,6 +20,7 @@ module.exports = {
   //   danger: "#e94b35",
   //   error: "#e94b35"
   // },
-  purple: "#800080"
+  purple: "#800080",
+  black: "black",
 
 };
