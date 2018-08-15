@@ -1,6 +1,8 @@
-// $fa-font-path:        "../webfonts";
-$purple: get("purple");
-$black: get("black");
+:root {
+  --twMidPosition: 0px;
+  // --delta-to-ancre-point_bips: 0; 
+}
+
 
 /* === STATIC === DEMO SPECIFIC TBD LATER*/
 $min: -25;
@@ -11,7 +13,8 @@ $max: 25;
 $wrapper-margin: 2rem auto 0;
 $wrapper-max-width: 40rem;
 $wrapper-height: 60rem;
-$wrapper-padding: 2rem;
+$wrapper-padding-left: 2rem;
+$wrapper-padding-right: 2rem;
 
 /* CONTAINER */
 // $container-height: 20rem;
@@ -38,13 +41,55 @@ $gutter-hor-none: 0rem;
 
 /* CHART AREA */
 $chart-height: 8rem;
-$chart-max-width: calc(#{$max-grid-width} - 2 * #{$wrapper-padding});
+$chart-max-width: calc(#{$max-grid-width} - #{$wrapper-padding-left} - #{$wrapper-padding-right});
+$chart-width: calc(100% - #{$wrapper-padding-left} - #{$wrapper-padding-right});
+
+$ref-point-width: 40px;
+
 $num-primary-col: 12;
-$num-mid-col: 2;
+$num-center-col: 2;
 $num-secondary-col-inside-primary-col: 5;
-$num-secondary-col: calc(#{$num-secondary-col-inside-primary-col} * (#{$num-primary-col} - #{$num-mid-col}));
+$num-secondary-col: calc(#{$num-secondary-col-inside-primary-col} * (#{$num-primary-col} - #{$num-center-col}));
 
-$width-primary-col: calc((100% - 2 * #{$wrapper-padding}) / #{$num-primary-col});
-$width-mid-col: calc(#{$num-mid-col} * #{$width-primary-col});
+$width-primary-col: calc(#{$chart-width} / #{$num-primary-col});
+$width-center-col: calc(#{$num-center-col} * #{$width-primary-col});
 
-$num-px-per-unit: calc((100% - 2 * #{$wrapper-padding} - $width-mid-col) / #{$num-secondary-col});
+
+$num-px-per-unit: calc((#{$chart-width} - #{$width-center-col}) / #{$num-secondary-col});
+$ancre-point-position: calc((#{$wrapper-padding-left} + #{$chart-width} / 2) - #{$ref-point-width} / 2);
+
+
+@function definePosition($deltaToAncrePoint){
+  @if $deltaToAncrePoint > 0 {
+    // @return $ancre-point-position + $num-px-per-unit;
+    @return #{$ancre-point-position + 50} ;
+  } @else {
+    // @return $ancre-point-position ; //+ $num-px-per-unit * $deltaToAncrePoint;
+    @return 0 ; //+ $num-px-per-unit * $deltaToAncrePoint;
+  }
+};
+
+
+
+// $position: get-function(definePosition);
+// $define-position: #{$ancre-point-position} + #{$num-px-per-unit} * #{$deltaToAncrePoint} + #{$chart-width} / 2;
+
+
+// @function definePosition(
+//   $deltaToAncrePoint,
+//   $ancre-point-position,
+//   $num-px-per-unit,
+//   $chart-width
+// ) {
+//     // $position: 0;
+    
+//     // @if $deltaToAncrePoint < 0 {
+//       $position: #{$ancre-point-position} + #{$num-px-per-unit} * #{$deltaToAncrePoint} + #{$chart-width} / 2;
+//     // }
+
+//     // @if $deltaToAncrePoint > 0 {
+//     //   $position: $ancre-point-position + $num-px-per-unit * $deltaToAncrePoint + $chart-width / 2
+//     // }
+
+//     @return $position;
+// };

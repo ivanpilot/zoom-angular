@@ -1,4 +1,7 @@
 
+<button (click)="increase()">
+  Go up Mid
+</button>
 <div class="spread">
 
   <!-- <div class="row">
@@ -41,16 +44,22 @@
 
   <div class="chart">
     <div class="chart__datapoints">
-      <div class="chart__datapoints--tw-min">
+      <div class="chart__datapoints--ref-tw-min">
         <p>TW Min</p>
         <i class="fas fa-circle"></i>
       </div>
-      <div class="chart__datapoints--tw-mid">
+      <div class="chart__datapoints--ref-tw-mid" id="tw-mid-point">
         <p>TW Mid</p>
         <i class="fas fa-circle"></i>
       </div>
-      <div class="chart__datapoints--tw-max">
+      <div class="chart__datapoints--ref-tw-max">
         <p>TW Max</p>
+        <i class="fas fa-circle"></i>
+      </div>
+    </div>
+    <div class="chart__datapoints">
+      <div class="chart__datapoints--ref-ancre" id="ancre">
+        <p>Ancre</p>
         <i class="fas fa-circle"></i>
       </div>
     </div>

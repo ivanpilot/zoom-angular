@@ -4,6 +4,7 @@
   max-width: $wrapper-max-width;
   height: $wrapper-height;
   margin: $wrapper-margin;
-  padding: $wrapper-padding;
+  padding-left: $wrapper-padding-left;
+  padding-right: $wrapper-padding-right;
   border: 1px solid darken(#ccc, 15%);
 }

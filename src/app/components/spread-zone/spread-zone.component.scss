@@ -1,6 +1,23 @@
 @import '../../../styles';
-// @import '../../../theme';
-// @import 'styles';
+
+// :root {
+//   --twMidPosition: 0px;
+// }
+
+
+.btn {
+  margin: 1rem;
+  background-color: darken(greenyellow, 20%);
+  padding: .5rem;
+  border-radius: 2px;
+  border: none;
+  color: #fff;
+  // position: relative;
+  float: right;
+
+  
+}
+
 
 .spread {
   padding: 200px 0px 5px;
@@ -21,6 +38,7 @@
   }
 }
 
+
 .chart {
   position: absolute;
   max-width: 100%;
@@ -31,29 +49,38 @@
 
   &__datapoints {
     position: relative;
-    text-align: center;
     line-height: 1rem;
+    text-align: center;
 
-    &--tw-min {
+    [class^="chart__datapoints--ref"] {
       position: absolute;
-      color: get('purple');
-      // color: purple;
+      width: $ref-point-width;
+    }
+    
+    &--ref-tw-min {
+      color: purple;
       left: 1rem;
     }
 
-    &--tw-max {
-      position: absolute;
-      color: green;
+    &--ref-tw-max {
+      color: greenyellow;
       left: 6rem;
     }
 
-    &--tw-mid {
-      position: absolute;
+    &--ref-tw-mid {
+      z-index: 3;
       color: orangered;
-      left: 3rem;
-      z-index: 5;
+      left: definePosition(5);
+      // left: var(--twMidPosition);
+
     }
 
+    &--ref-ancre {
+      color: green;
+      left: $ancre-point-position;
+      z-index: 10;
+
+    }
 
 
   }
