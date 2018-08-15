@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'spread-zone',
@@ -6,19 +6,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./spread-zone.component.scss']
 })
 export class SpreadZoneComponent implements OnInit {
+  @ViewChild('spread') spread: ElementRef;
+  @ViewChild('twmid') twmid: ElementRef;
 
-  twMidPosition: number = -19.2
+  twMidPosition: number = 109.2;
+  tpos: number = 50;
   constructor() { }
 
   ngOnInit() {
+    // console.log('spread width >>', ('#spread').width());
+  }
+
+  ngAfterViewInit() {
+    console.log('spread >> ', this.spread)
+    console.log('spread native element >> ', this.spread.nativeElement.clientWidth)
   }
 
   increase(){
-    console.log('previous midPoint position was: ', this.twMidPosition)
-    this.twMidPosition += 5;
-    console.log('current midPoint position is: ', this.twMidPosition)
-    const twMidPoint = document.getElementById('tw-mid-point')
-    twMidPoint.style.setProperty('--twMidPosition', this.twMidPosition + 'px')
+    this.twmid.nativeElement.style.setProperty('--twMidPosition', this.twMidPosition + 'px')
   }
 
 

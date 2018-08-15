@@ -1,9 +1,3 @@
-:root {
-  --twMidPosition: 0px;
-  // --delta-to-ancre-point_bips: 0; 
-}
-
-
 /* === STATIC === DEMO SPECIFIC TBD LATER*/
 $min: -25;
 $max: 25;
@@ -57,39 +51,3 @@ $width-center-col: calc(#{$num-center-col} * #{$width-primary-col});
 
 $num-px-per-unit: calc((#{$chart-width} - #{$width-center-col}) / #{$num-secondary-col});
 $ancre-point-position: calc((#{$wrapper-padding-left} + #{$chart-width} / 2) - #{$ref-point-width} / 2);
-
-
-@function definePosition($deltaToAncrePoint){
-  @if $deltaToAncrePoint > 0 {
-    // @return $ancre-point-position + $num-px-per-unit;
-    @return #{$ancre-point-position + 50} ;
-  } @else {
-    // @return $ancre-point-position ; //+ $num-px-per-unit * $deltaToAncrePoint;
-    @return 0 ; //+ $num-px-per-unit * $deltaToAncrePoint;
-  }
-};
-
-
-
-// $position: get-function(definePosition);
-// $define-position: #{$ancre-point-position} + #{$num-px-per-unit} * #{$deltaToAncrePoint} + #{$chart-width} / 2;
-
-
-// @function definePosition(
-//   $deltaToAncrePoint,
-//   $ancre-point-position,
-//   $num-px-per-unit,
-//   $chart-width
-// ) {
-//     // $position: 0;
-    
-//     // @if $deltaToAncrePoint < 0 {
-//       $position: #{$ancre-point-position} + #{$num-px-per-unit} * #{$deltaToAncrePoint} + #{$chart-width} / 2;
-//     // }
-
-//     // @if $deltaToAncrePoint > 0 {
-//     //   $position: $ancre-point-position + $num-px-per-unit * $deltaToAncrePoint + $chart-width / 2
-//     // }
-
-//     @return $position;
-// };

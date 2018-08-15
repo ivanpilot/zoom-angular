@@ -1,8 +1,8 @@
 @import '../../../styles';
 
-// :root {
-//   --twMidPosition: 0px;
-// }
+:root {
+  --twMidPosition: 0px;
+}
 
 
 .btn {
@@ -70,8 +70,8 @@
     &--ref-tw-mid {
       z-index: 3;
       color: orangered;
-      left: definePosition(5);
-      // left: var(--twMidPosition);
+      // left: definePosition(5);
+      left: var(--twMidPosition);
 
     }
 
