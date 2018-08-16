@@ -1,0 +1,61 @@
+import { Injectable, ElementRef } from '@angular/core';
+import * as _ from 'lodash';
+
+interface SpreadGrid {
+  width: number,
+  numPrimaryCol: number,
+  numSecondaryCol: number,
+  widthAncreColInPer: number,
+  widthPrimaryColInPer: number,
+  widthSecondaryColInPer: number,
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class SpreadGridService {
+  ancreValue: number = 100;
+  
+  spreadGrid: SpreadGrid = {
+    width: 0,
+    numPrimaryCol: 12,
+    numSecondaryCol: 5,
+    widthAncreColInPer: 0,
+    widthPrimaryColInPer: 1 / 12,
+    widthSecondaryColInPer: 1 / ((12 - 2) * 5),
+  };
+
+  constructor() { }
+
+  setGrid(spreadGrid: ElementRef){
+    // debugger
+    // console.log('spreadGrid is', spreadGrid.nativeElement.clientWidth)
+    this.spreadGrid = {
+      ...this.spreadGrid,
+      width: spreadGrid.nativeElement.clientWidth
+    }
+  }
+
+  getGrid(){
+    return _.cloneDeep(this.spreadGrid);
+  }
+
+  setAncreValue(value: number){
+    this.ancreValue = value;
+  }
+
+  getAncreValue(){
+    return this.ancreValue;
+  }
+
+  setPosition(element: any, value: number){
+    debugger
+    let delta = value - this.getAncreValue();
+    // let delta = 105 - this.getAncreValue();
+    if(delta > 0){
+      return 100 * (.5 + this.spreadGrid.widthPrimaryColInPer + delta * this.spreadGrid.widthSecondaryColInPer - element.clientWidth/this.spreadGrid.width);
+    } else {
+      return 100 * (.5 - this.spreadGrid.widthPrimaryColInPer - delta * this.spreadGrid.widthSecondaryColInPer - element.clientWidth/this.spreadGrid.width);
+    }
+  }
+}

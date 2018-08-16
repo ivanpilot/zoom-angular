@@ -1,5 +1,5 @@
 
-<button (click)="increase()">
+<button (click)="increase(twmax, twMaxValue)">
   Go up Mid
 </button>
 <div class="spread" #spread>
@@ -52,8 +52,9 @@
         <p>TW Mid</p>
         <i class="fas fa-circle"></i>
       </div>
-      <div class="chart__datapoints--ref-tw-max" [style.left.%]="tpos">
+      <div class="chart__datapoints--ref-tw-max" [style.left.%]="twMaxPosition" #twmax>
         <p>TW Max</p>
+        <p>{{twMaxValue}}</p>
         <i class="fas fa-circle"></i>
       </div>
     </div>

@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { SpreadZoneComponent } from './components/spread-zone/spread-zone.component';
 
+import { SpreadGridService } from './services/spread-grid.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -12,7 +14,9 @@ import { SpreadZoneComponent } from './components/spread-zone/spread-zone.compon
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    SpreadGridService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
