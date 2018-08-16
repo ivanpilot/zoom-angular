@@ -57,12 +57,12 @@
       width: $ref-point-width;
     }
     
-    &--ref-tw-min {
+    &--ref-tw-bid {
       color: purple;
       left: 1rem;
     }
 
-    &--ref-tw-max {
+    &--ref-tw-ask {
       color: greenyellow;
       left: 6rem;
     }
@@ -70,7 +70,6 @@
     &--ref-tw-mid {
       z-index: 3;
       color: orangered;
-      // left: var(--twMidPosition);
     }
 
     &--ref-ancre {

@@ -1,10 +1,10 @@
 
-<input type="text" #quote>
-<button (click)="increase(twmaxPoint, quote.value)">
+<!-- <input type="text" #quote>
+<button (click)="setPositionPoint(twAsk, quote.value)">
   Go up Mid
-</button>
+</button> -->
 <input type="text" #ancre>
-<button (click)="resetAncre(ancrePoint, ancre.value)">
+<button (click)="resetAncre(ancre.value)">
   re-Ancre
 </button>
 <div class="spread" #spread>
@@ -49,24 +49,27 @@
 
   <div class="chart">
     <div class="chart__datapoints">
-      <div class="chart__datapoints--ref-tw-min">
-        <p>TW Min</p>
+      <div class="chart__datapoints--ref-tw-bid">
+        <p>TW Bid</p>
         <i class="fas fa-circle"></i>
+        <p>{{referencePointsValue.tw.bid}}</p>
       </div>
-      <div class="chart__datapoints--ref-tw-mid" #twmid>
+      <div class="chart__datapoints--ref-tw-mid" #twMid>
         <p>TW Mid</p>
         <i class="fas fa-circle"></i>
+        <p>{{referencePointsValue.tw.mid}}</p>
       </div>
-      <div class="chart__datapoints--ref-tw-max" [style.left.%]="twMaxPosition" #twmaxPoint>
-        <p>TW Max</p>
-        <p>{{twMaxValue}}</p>
+      <div class="chart__datapoints--ref-tw-ask" [style.left.%]="referencePointsCoordinates.tw.ask">
+        <p>TW Ask</p>
         <i class="fas fa-circle"></i>
+        <p>{{referencePointsValue.tw.ask}}</p>
       </div>
     </div>
     <div class="chart__datapoints">
-      <div class="chart__datapoints--ref-ancre" #ancrePoint>
+      <div class="chart__datapoints--ref-ancre">
         <p>Ancre</p>
         <i class="fas fa-circle"></i>
+        <p>{{ ancrePoint }}</p>
       </div>
     </div>
   </div>
