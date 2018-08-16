@@ -28,7 +28,12 @@ export class SpreadZoneComponent implements OnInit {
   increase(element, value){
     // this.twmid.nativeElement.style.setProperty('--twMidPosition', this.twMidPosition + 'px')
     this.twMaxPosition = this.spreadGrid.setPosition(element, value);
-    debugger
+  }
+
+  resetAncre(element, value){
+    // this.twmid.nativeElement.style.setProperty('--twMidPosition', this.twMidPosition + 'px')
+    // this.twMaxPosition = this.spreadGrid.setPosition(element, value);
+    this.spreadGrid.setAncreValue(value)
   }
 
 

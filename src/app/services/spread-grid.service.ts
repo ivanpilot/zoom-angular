@@ -22,14 +22,12 @@ export class SpreadGridService {
     numSecondaryCol: 5,
     widthAncreColInPer: 0,
     widthPrimaryColInPer: 1 / 12,
-    widthSecondaryColInPer: 1 / ((12 - 2) * 5),
+    widthSecondaryColInPer: 1 / (12 * 5),
   };
 
   constructor() { }
 
   setGrid(spreadGrid: ElementRef){
-    // debugger
-    // console.log('spreadGrid is', spreadGrid.nativeElement.clientWidth)
     this.spreadGrid = {
       ...this.spreadGrid,
       width: spreadGrid.nativeElement.clientWidth
@@ -49,13 +47,9 @@ export class SpreadGridService {
   }
 
   setPosition(element: any, value: number){
-    debugger
-    let delta = value - this.getAncreValue();
-    // let delta = 105 - this.getAncreValue();
-    if(delta > 0){
-      return 100 * (.5 + this.spreadGrid.widthPrimaryColInPer + delta * this.spreadGrid.widthSecondaryColInPer - element.clientWidth/this.spreadGrid.width);
-    } else {
-      return 100 * (.5 - this.spreadGrid.widthPrimaryColInPer - delta * this.spreadGrid.widthSecondaryColInPer - element.clientWidth/this.spreadGrid.width);
-    }
+    let distance = value - this.ancreValue >= 0 ? 
+    this.spreadGrid.widthPrimaryColInPer + (value - this.ancreValue) * this.spreadGrid.widthSecondaryColInPer : -this.spreadGrid.widthPrimaryColInPer + (value - this.ancreValue) * this.spreadGrid.widthSecondaryColInPer;
+
+    return 100 * (.5 + distance - .5 * element.clientWidth / this.spreadGrid.width);
   }
 }

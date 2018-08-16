@@ -1,6 +1,11 @@
 
-<button (click)="increase(twmax, twMaxValue)">
+<input type="text" #quote>
+<button (click)="increase(twmaxPoint, quote.value)">
   Go up Mid
+</button>
+<input type="text" #ancre>
+<button (click)="resetAncre(ancrePoint, ancre.value)">
+  re-Ancre
 </button>
 <div class="spread" #spread>
 
@@ -52,14 +57,14 @@
         <p>TW Mid</p>
         <i class="fas fa-circle"></i>
       </div>
-      <div class="chart__datapoints--ref-tw-max" [style.left.%]="twMaxPosition" #twmax>
+      <div class="chart__datapoints--ref-tw-max" [style.left.%]="twMaxPosition" #twmaxPoint>
         <p>TW Max</p>
         <p>{{twMaxValue}}</p>
         <i class="fas fa-circle"></i>
       </div>
     </div>
     <div class="chart__datapoints">
-      <div class="chart__datapoints--ref-ancre">
+      <div class="chart__datapoints--ref-ancre" #ancrePoint>
         <p>Ancre</p>
         <i class="fas fa-circle"></i>
       </div>

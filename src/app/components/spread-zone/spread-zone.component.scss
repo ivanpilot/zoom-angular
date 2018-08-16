@@ -1,8 +1,8 @@
 @import '../../../styles';
 
-:root {
-  --twMidPosition: 0px;
-}
+// :root {
+//   --twMidPosition: 0px;
+// }
 
 
 .btn {
@@ -54,7 +54,7 @@
 
     [class^="chart__datapoints--ref"] {
       position: absolute;
-      // width: $ref-point-width;
+      width: $ref-point-width;
     }
     
     &--ref-tw-min {
@@ -70,9 +70,7 @@
     &--ref-tw-mid {
       z-index: 3;
       color: orangered;
-      // left: definePosition(5);
-      left: var(--twMidPosition);
-
+      // left: var(--twMidPosition);
     }
 
     &--ref-ancre {
@@ -81,20 +79,16 @@
       z-index: 10;
 
     }
-
-
   }
 
 
   .line{
-    // float: left;
     position: relative;
 
     &--purple {
       color: purple;
       position: absolute;
       left: 1rem;
-
     }
 
     &--green {

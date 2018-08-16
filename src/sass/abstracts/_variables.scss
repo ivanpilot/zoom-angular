@@ -38,7 +38,7 @@ $chart-height: 8rem;
 $chart-max-width: calc(#{$max-grid-width} - #{$wrapper-padding-left} - #{$wrapper-padding-right});
 $chart-width: calc(100% - #{$wrapper-padding-left} - #{$wrapper-padding-right});
 
-// $ref-point-width: 40px;
+$ref-point-width: 40px;
 
 $num-primary-col: 12;
 $num-center-col: 2;
@@ -50,4 +50,4 @@ $width-center-col: calc(#{$num-center-col} * #{$width-primary-col});
 
 
 // $num-px-per-unit: calc((#{$chart-width} - #{$width-center-col}) / #{$num-secondary-col});
-// $ancre-point-position: calc((#{$wrapper-padding-left} + #{$chart-width} / 2) - #{$ref-point-width} / 2);
+$ancre-point-position: calc((#{$wrapper-padding-left} + #{$chart-width} / 2) - #{$ref-point-width} / 2);
