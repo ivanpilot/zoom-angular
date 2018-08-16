@@ -3,10 +3,10 @@
 <button (click)="setPositionPoint(twAsk, quote.value)">
   Go up Mid
 </button> -->
-<input type="text" #ancre>
+<!-- <input type="text" #ancre>
 <button (click)="resetAncre(ancre.value)">
   re-Ancre
-</button>
+</button> -->
 <div class="spread" #spread>
 
   <!-- <div class="row">
@@ -49,17 +49,29 @@
 
   <div class="chart">
     <div class="chart__datapoints">
-      <div class="chart__datapoints--ref-tw-bid">
+      <div 
+        class="chart__datapoints--ref-tw-bid" 
+        [style.left.%]="referencePointsCoordinates.tw.bid"
+        (click)="resetAncre(referencePointsValue.tw.bid)"
+      >
         <p>TW Bid</p>
         <i class="fas fa-circle"></i>
         <p>{{referencePointsValue.tw.bid}}</p>
       </div>
-      <div class="chart__datapoints--ref-tw-mid" #twMid>
+      <div
+        class="chart__datapoints--ref-tw-mid"
+        [style.left.%]="referencePointsCoordinates.tw.mid"
+        (click)="resetAncre(referencePointsValue.tw.mid)"
+      >
         <p>TW Mid</p>
         <i class="fas fa-circle"></i>
         <p>{{referencePointsValue.tw.mid}}</p>
       </div>
-      <div class="chart__datapoints--ref-tw-ask" [style.left.%]="referencePointsCoordinates.tw.ask">
+      <div
+        class="chart__datapoints--ref-tw-ask"
+        [style.left.%]="referencePointsCoordinates.tw.ask"
+        (click)="resetAncre(referencePointsValue.tw.ask)"
+      >
         <p>TW Ask</p>
         <i class="fas fa-circle"></i>
         <p>{{referencePointsValue.tw.ask}}</p>

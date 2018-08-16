@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { SpreadGridService } from '../../services/spread-grid.service';
-import { Observer } from 'rxjs';
-import { ancreStore } from '../../store'; 
+// import { Observer } from 'rxjs';
+// import { ancreStore } from '../../store'; 
 @Component({
   selector: 'spread-zone',
   templateUrl: './spread-zone.component.html',
@@ -43,26 +43,20 @@ export class SpreadZoneComponent implements OnInit {
     // }
   };
 
-  // twMidPosition: number = 109.2;
-  // twMaxValue: number = 110;
-  // twAsk: number = 50;
-  constructor(private spreadGrid: SpreadGridService) {
-    this.referencePointsCoordinates = this.buildGrid(this.referencePointsValue, this.ancrePoint);
-    // debugger
-   }
+  constructor(private spreadGrid: SpreadGridService) {}
 
   ngOnInit() {
     // ancreStore.ancre$.subscribe((data) => {
     //   console.log('data is >>> ', data);
     //   this.spreadGrid.setAncreValue(data);
     // })
-    // this.referencePointsCoordinates = this.buildGrid(this.referencePointsValue, this.ancrePoint);
+    this.referencePointsCoordinates = this.buildGrid(this.referencePointsValue, this.ancrePoint);
   }
 
-  ngAfterViewInit() {
-    console.log('spread >> ', this.spread)
-    // this.spreadGrid.setGrid(this.spread);
-  }
+  // ngAfterViewInit() {
+  //   console.log('spread >> ', this.spread)
+  //   // this.spreadGrid.setGrid(this.spread);
+  // }
 
   //purely for this playground. function not needed once merge with live project
   // setUniquePositionPoint(element, value){
@@ -74,11 +68,9 @@ export class SpreadZoneComponent implements OnInit {
     return this.spreadGrid.buildGrid(referencePoints, ancre);
   }
 
-  resetAncre(ancreValue){
-    // this.spreadGrid.setAncreValue(value)
-    // ancreStore.setAncrePosition(value);
-    this.ancrePoint = ancreValue;
-    this.referencePointsCoordinates = this.buildGrid(this.referencePointsValue, ancreValue);
+  resetAncre(value){
+    this.ancrePoint = value;
+    this.referencePointsCoordinates = this.buildGrid(this.referencePointsValue, value);
   }
 
 
